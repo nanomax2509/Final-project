@@ -28,8 +28,8 @@ export default function HeaderHomeTemplate() {
         </div>
 
         <div className="HeaderRight">
-          <NavLink className="HeaderSearch" to="/search">
-            <div className="input-group mb-3">
+          <div className="HeaderSearch" to="/search">
+            <div className="input-group ">
               <input
                 type="text"
                 className="form-control"
@@ -39,11 +39,11 @@ export default function HeaderHomeTemplate() {
               />
               <div className="GroupBtnSeach input-group-append">
                 <button className="BtnSearch btn btn-outline-secondary" type="button" id="button-addon2">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
               </div>
             </div>
-          </NavLink>
+          </div>
           {userProfile.email ? (
             <>
               <p style={{ color: 'white' }}>{userProfile.email}</p>
