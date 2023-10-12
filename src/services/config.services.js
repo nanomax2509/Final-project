@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { getLocalStorage } from '../utils';
+import { getLocalStorage } from '../utils/index';
 import { ACCESS_TOKEN } from '../constant';
 
-const BASE_URL = 'https://shop.cyberlearn.vn/api';
-
+const BASE_URL = 'https://elearningnew.cybersoft.edu.vn';
+const token = getLocalStorage(ACCESS_TOKEN);
+console.log(token)
 // Những api nào cần auth cần đăng nhập, private
 export const axiosWithAuth = axios.create({
 	baseURL: BASE_URL,
@@ -15,7 +16,7 @@ axiosWithAuth.interceptors.request.use(
 	(config) => {
 		// thêm vào header trước khi gọi api
 		config.headers = {
-			Authorization: `Bearer ${getLocalStorage(ACCESS_TOKEN)}`,
+			TokenCybersoft: `${token}`,
 		};
 
 		return config;
@@ -24,3 +25,4 @@ axiosWithAuth.interceptors.request.use(
 		return Promise.reject(err);
 	}
 );
+

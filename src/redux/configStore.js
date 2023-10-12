@@ -1,9 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import ProductReducer from './slices/Product';
+import CourseSlice from './slices/Course'
 import UserReducer from './slices/User';
+import CatalogSlice from './slices/Catalog'
+import coursesByCategorySlice from './slices/coursesByCategory'
 export const store = configureStore({
 	reducer: {
-		ProductReducer: ProductReducer,
+		CourseSlice: CourseSlice,
 		UserReducer,
+		CatalogSlice:CatalogSlice,
+		coursesByCategorySlice:coursesByCategorySlice,
 	},
+	middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false
+    })
 });

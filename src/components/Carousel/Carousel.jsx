@@ -29,6 +29,7 @@ const btnCarousel={
 	color: 'white',
 
 }
+
 function CarouselHome() {
 	const carouselRef = useRef();
 
@@ -61,11 +62,11 @@ function CarouselHome() {
 						</NavLink>
 					</div>
 					<div className="contentCarousel" style={contentCarouselStyle}>
-						<h3 style={{ fontSize: '50px', color: 'yellow', maxWidth: '60%',   }}>Khởi đầu sự nghiệp của bạn</h3>
+						<h3 style={{ fontSize: '50px', color: 'yellow', maxWidth: '60%',    }}>Khởi đầu sự nghiệp của bạn</h3>
 						<h4 style={{ fontSize: '30px', color: 'white', maxWidth: '60%' }}> Trở thành lập trình viên chuyên nghiệp tại CyberSoft</h4>
 						<div>
-						<button style={btnCarousel}>Buy now</button>
-						<button style={btnCarousel}>Buy now</button>
+						<button style={btnCarousel}>Xem khoá học</button>
+						<button className='btnCarousel1'>Tư vấn học</button>
 						</div>
 						
 					</div>

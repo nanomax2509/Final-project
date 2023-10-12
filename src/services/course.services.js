@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // function async: trả về một promise.
-export const getProductByIdApi = async (id) => {
+export const getCourseByIdApi = async (id) => {
 	// try catch: không chỉ dùng ở trong async await;
 
 	// try {
@@ -13,7 +13,7 @@ export const getProductByIdApi = async (id) => {
 
 	try {
 		const resp = await axios.get(
-			`https://shop.cyberlearn.vn/api/Product/getbyid?id=${id}`
+			`https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?maNhom=${id}`
 		);
 
 		return resp; // resolve()

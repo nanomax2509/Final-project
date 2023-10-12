@@ -4,12 +4,13 @@ import { NavLink, Outlet } from 'react-router-dom';
 import HeaderHomeTemplate from './components/HeaderHomeTemplate/HeaderHomeTemplate';
 import Carousel from '../components/Carousel/Carousel';
 import FooterHomeTemplate from './components/FooterHomeTemplate/FooterHomeTemplate';
+import Course from '../components/Course/Course';
 function HomeTemplate() {
   return (
-    <Fragment>
-        <HeaderHomeTemplate/>
-		<div style={{marginTop: '30px'}}></div>
-		<Carousel />
+    <Fragment >
+        <HeaderHomeTemplate />
+		{/* <div style={{marginTop: '30px'}}></div> */}
+		
         <div
 				style={{
 					minHeight: '75vh',

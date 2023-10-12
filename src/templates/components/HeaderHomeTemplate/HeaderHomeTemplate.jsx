@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logoIcon from '../../../assets/icons/logo.png';
 import './HeaderHomeTemplate.scss';
-
+import CatalogCourse from '../../../components/CatalogCourse/catalogCourse';
 export default function HeaderHomeTemplate() {
   const { userProfile } = useSelector((state) => state.UserReducer);
   const navigate = useNavigate();
@@ -15,16 +15,13 @@ export default function HeaderHomeTemplate() {
 
   return (
     <Fragment>
-      <header className="HeaderHomeTemplate">
+      <header className="HeaderHomeTemplate ">
         <div className="HeaderLeft">
           <NavLink className="HeaderLogo" to="/">
             <img src={logoIcon} alt="" />
-            <p>CYBERSOFT</p>
+            <span>CYBERSOFT</span>
           </NavLink>
-          <NavLink className="HeaderList" to="/courses">
-            <i className="fa-solid fa-list-ul"></i>
-            <p>Danh mục khoá học</p>
-          </NavLink>
+          <CatalogCourse />
         </div>
 
         <div className="HeaderRight">

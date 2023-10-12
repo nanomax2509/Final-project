@@ -36,6 +36,20 @@
   .rotate-right-image {
     animation: rotateRight 30s linear infinite;
   }
+  .btnCarousel1{
+    margin-left: 1rem;
+	  background-color: black;
+	  border: 1px solid white;
+    color: white;
+	  transition: .5s;
+
+    
+  }
+  .btnCarousel1:hover{
+      background-color: #c1c104;
+      color: white;
+      border: 1px solid #c1c104;
+  }
   @keyframes rotateLeft {
     0% {
       transform: rotate(0deg);

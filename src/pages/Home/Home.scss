@@ -1,0 +1,7 @@
+.listCourse{
+    width: calc(100% - 10px); /* Đảm bảo mỗi card chiếm 25% chiều rộng và trừ đi khoảng cách 10px */
+	margin-right: 10px; /* Khoảng cách giữa các card */
+    justify-content: center;
+    align-items: stretch;
+    gap:10px;
+}
