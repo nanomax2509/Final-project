@@ -1,0 +1,44 @@
+.dataDetailTop{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/imgDetail/carousel-detail.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    width: 100%;
+    padding: 3rem 3rem;
+    color: white;
+    display: flex;
+}
+.title{
+    width: 100%;
+    margin-right: 2rem;
+    margin-left: 4rem;
+    padding-right: 3rem;
+}
+.btnDangKy{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    transition: .5s;
+    margin-top: 1rem;
+    &:hover{
+        color: red;
+        border: red 1px solid;
+    }
+    margin-left: 5rem;
+
+}
+.dataDetailLeft{
+    width: 65%;
+}
+.img{
+    width: 80%;
+    text-align: center;
+    height: 80%;
+}
+.dataDetailRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}

@@ -6,6 +6,7 @@ import RegisterFormik from './pages/Register/RegisterFormik';
 import Login from './pages/Login/Login';
 import CatalogCourse from './components/CatalogCourse/catalogCourse';
 import CoursesByCategory from './pages/CoursesbyCategory/Cbc';
+import Detail from './pages/Detail/Detail';
 const Home = lazy(() => import('./pages/Home/Home'));
 
 
@@ -20,6 +21,7 @@ function App() {
 					<Route path='login' element={<Login />} />
 				<Route path='catalogCourse' element={<CatalogCourse/>}/>	
 				<Route path='CoursesByCategory/:id' element={<CoursesByCategory/>}/>
+				<Route path='Detail/:id' element={<Detail/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>
