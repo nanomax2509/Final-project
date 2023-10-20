@@ -4,7 +4,6 @@ import { ACCESS_TOKEN } from '../constant';
 
 const BASE_URL = 'https://elearningnew.cybersoft.edu.vn';
 const token = getLocalStorage(ACCESS_TOKEN);
-console.log(token)
 // Những api nào cần auth cần đăng nhập, private
 export const axiosWithAuth = axios.create({
 	baseURL: BASE_URL,

@@ -4,7 +4,6 @@ import { getThank, setCatalogCourse } from '../../redux/slices/Catalog';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLocalStorage } from '../../utils';
 import ListCatalog from './ListCatalog/ListCatalog';
-const token = getLocalStorage("ACCESS_TOKEN");
 function CatalogCourse() {
 	const listCatalog = useSelector((state) => state.CatalogSlice.listCatalog);
 	// console.log("listCatalog1", listCatalog);

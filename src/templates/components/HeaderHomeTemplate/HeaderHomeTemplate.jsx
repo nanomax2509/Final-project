@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logoIcon from '../../../assets/icons/logo.png';
 import './HeaderHomeTemplate.scss';
-import CatalogCourse from '../../../components/CatalogCourse/catalogCourse';
+import CatalogCourse from '../../../components/CatalogCourse/CatalogCourse';
+import Search from '../../../pages/Search/Search';
+
 export default function HeaderHomeTemplate() {
   const { userProfile } = useSelector((state) => state.UserReducer);
   const navigate = useNavigate();
@@ -25,20 +27,8 @@ export default function HeaderHomeTemplate() {
         </div>
 
         <div className="HeaderRight">
-          <div className="HeaderSearch" to="/search">
-            <div className="input-group ">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Tìm kiếm khoá học"
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-              />
-              <div className="GroupBtnSeach input-group-append">
-                <button className="BtnSearch btn btn-outline-secondary" type="button" id="button-addon2">
-                <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-              </div>
+          <div className="HeaderSearch" >
+              <Search/>
             </div>
           </div>
           {userProfile.email ? (
@@ -56,7 +46,6 @@ export default function HeaderHomeTemplate() {
               </NavLink>
             </>
           )}
-        </div>
       </header>
     </Fragment>
   );
