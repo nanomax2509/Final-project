@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logoIcon from '../../../assets/icons/logo.png';
 import './HeaderHomeTemplate.scss';
-// import CatalogCourse from '../../../components/CatalogCourse/CatalogCourse';
+import CatalogCourse from '../../../components/CatalogCourse/CatalogCourse';
 import Search from '../../../pages/Search/Search';
 
 export default function HeaderHomeTemplate() {
