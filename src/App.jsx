@@ -4,7 +4,7 @@ import HomeTemplate from './templates/HomeTemplate'
 import { useScrollTop } from './hooks/useScrollTop';
 import RegisterFormik from './pages/Register/RegisterFormik';
 import Login from './pages/Login/Login';
-import CatalogCourse from './components/CatalogCourse/CatalogCourse';
+// import CatalogCourse from './components/CatalogCourse/CatalogCourse';
 import CoursesByCategory from './pages/CoursesbyCategory/Cbc';
 import Detail from './pages/Detail/Detail';
 import Search from './pages/Search/Search';
