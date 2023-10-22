@@ -21,7 +21,7 @@ function DataDetail(props) {
     </div>
     <div className={css.dataDetailBottom}>
         <h1 className='text-center mt-3 font-weight-bold'>Giới thiệu khoá học</h1>
-        <p className='ml-3'>{infoDetail.moTa}</p>
+        <p className='ml-3 '>{infoDetail.moTa}</p>
     </div>
    </Fragment>
   );

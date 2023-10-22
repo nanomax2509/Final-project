@@ -1,7 +1,7 @@
 // rxslice
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { getCourseByCategoryIdApi } from '../../services/CoursesByCategory.services';
+import { getCourseByCategoryIdApi } from '../../services/coursesByCategory.services';
 const initialState = {
 	listCbc: [],
 	isLoading: false,

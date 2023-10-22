@@ -7,7 +7,8 @@ import Login from './pages/Login/Login';
 import CatalogCourse from './components/CatalogCourse/CatalogCourse';
 import CoursesByCategory from './pages/CoursesbyCategory/Cbc';
 import Detail from './pages/Detail/Detail';
-import Search from './pages/Search/Search';
+import ListSearch from './components/ListSearch/ListSearch';
+import Profile from './pages/Profile/Profile';
 const Home = lazy(() => import('./pages/Home/Home'));
 
 
@@ -23,8 +24,8 @@ function App() {
 				<Route path='catalogCourse' element={<CatalogCourse/>}/>	
 				<Route path='CoursesByCategory/:id' element={<CoursesByCategory/>}/>
 				<Route path='Detail/:id' element={<Detail/>}/>
-				<Route path='search' element={<Search/>}/>
-
+				<Route path='listSearch' element={<ListSearch/>}/>
+				<Route path='profile' element={<Profile/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

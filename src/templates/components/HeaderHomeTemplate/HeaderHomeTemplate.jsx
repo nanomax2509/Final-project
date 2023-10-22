@@ -5,13 +5,20 @@ import logoIcon from '../../../assets/icons/logo.png';
 import './HeaderHomeTemplate.scss';
 import CatalogCourse from '../../../components/CatalogCourse/CatalogCourse';
 import Search from '../../../pages/Search/Search';
-
+import { deleteKey } from '../../../utils';
+import { ACCESS_TOKEN } from '../../../constant';
+import { resetUserProfile } from '../../../redux/slices/User';
 export default function HeaderHomeTemplate() {
   const { userProfile } = useSelector((state) => state.UserReducer);
+  // console.log(userProfile,"header")
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  console.log(ACCESS_TOKEN, "token")
   const handleLogout = () => {
+    deleteKey(ACCESS_TOKEN);
+    // reset userLogin ở trên redux.
+    const action = resetUserProfile();
+    dispatch(action);
     navigate('/login');
   };
 
@@ -28,24 +35,25 @@ export default function HeaderHomeTemplate() {
 
         <div className="HeaderRight">
           <div className="HeaderSearch" >
-              <Search/>
-            </div>
+            <Search />
           </div>
           {userProfile.email ? (
-            <>
+            <div style={{ textAlign: 'center'}} className='d-flex'>
               <p style={{ color: 'white' }}>{userProfile.email}</p>
               <button onClick={handleLogout}>Logout</button>
-            </>
+            </div>
           ) : (
-            <>
+            <div style={{ textAlign: 'center' }}>
               <NavLink className={'HeaderLink'} to={'/login'}>
                 Login
               </NavLink>
               <NavLink className={'HeaderLink'} to={'/register'}>
                 Register
               </NavLink>
-            </>
+            </div>
           )}
+        </div>
+
       </header>
     </Fragment>
   );

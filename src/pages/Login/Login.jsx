@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import { getLocalStorage, saveLocalStorage } from '../../utils/index';
-import { ACCESS_TOKEN } from '../../constant/index';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss'
 import { NavLink } from 'react-router-dom';
@@ -15,7 +14,7 @@ const schemaLogin = Yup.object({
     .required('Tên người dùng là bắt buộc')
     .min(2, 'Phải có ít nhất 2 ký tự')
     .max(10, 'Phải có tối đa 10 ký tự'),
-	password: Yup.string()
+	matKhau: Yup.string()
 		.required('Password is required')
 		.min(6, 'Must be at least 6 characters')
 		.max(10, 'Must be 10 characters or less'),
@@ -24,13 +23,12 @@ const schemaLogin = Yup.object({
 function Login() {
 	const navigate = useNavigate();
 	const [errorMessage, setErrorMessage] = useState('');
-
 	const formik = useFormik({
 		initialValues: {
-			taiKhoan: 'quocanh11',
+			taiKhoan: 'quocanh113',
 			matKhau: '123123',
 		},
-
+			
 		validationSchema: schemaLogin,
 
 		onSubmit: async (values) => {
@@ -45,13 +43,13 @@ function Login() {
 					},
 					{
 						headers: {
-						  TokenCybersoft: `${token}`, 
+						  TokenCybersoft: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1MDA4IiwiSGV0SGFuU3RyaW5nIjoiMjgvMDEvMjAyNCIsIkhldEhhblRpbWUiOiIxNzA2NDAwMDAwMDAwIiwibmJmIjoxNjc3NDMwODAwLCJleHAiOjE3MDY1NDc2MDB9.eo3y0MmcjE8Jl4fRzUJLBoZzylEeFDcUTfWXvtb1hdc`, 
 						},
 					  }
 
 				);
-				console.log({ resp });
-
+				console.log(resp.data.accessToken);
+				saveLocalStorage('ACCESS_TOKEN', resp.data.accessToken);
 				// lưu vào storage
 				navigate('/profile');
 				// public: ai cũng có thể gọi được hết.
@@ -70,7 +68,6 @@ function Login() {
 			}
 		},
 	});
-
 	return (
 		<form className='login-input' onSubmit={formik.handleSubmit}>
 			<h1 className='login-title'>Đăng nhập</h1>

@@ -5,8 +5,10 @@ const initialState = {
 	listSearch: [],
 	SearchDetail: {},
 	isLoading: true,
+	SearchTerm: {},
 };
 export const getThank = createAsyncThunk('Search/getData', async (id) => {
+	console.log(id,"idsearch")
 	const resp = await axios.get(
 		`https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=${id}&MaNhom=GP01`,
 		{

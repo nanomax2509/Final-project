@@ -1,0 +1,25 @@
+.card-search{
+    border: 2px solid chocolate;
+    margin-right: 10px; /* Tạo khoảng cách bên phải giữa các card */
+    margin-bottom: 10px; 
+    padding: 1rem;
+    max-width: 24%;
+    text-decoration: none!important;
+    width: 300px; // Định rõ chiều rộng của card
+    height: 400px;
+    overflow: hidden;
+}
+.card-search-img{
+    display: flex;
+    justify-content: center;
+    height: 40%;
+}
+.card-search-content {
+    width: 100%; // Đảm bảo chiều rộng của thành phần con không vượt quá card
+    height: 50%; // Định rõ chiều cao của thành phần con
+    padding: 0.5rem; // Tạo khoảng cách giữa nội dung và viền của thành phần con
+    box-sizing: border-box; // Đảm bảo kích thước tính cả viền trong tính toán kích thước
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
+  }
