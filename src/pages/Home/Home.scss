@@ -5,3 +5,35 @@
     gap:10px;
     padding: 5px;
 }
+.Course-feature {
+    margin: 2rem;
+    padding: 10px 35px;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position: relative;
+    color: #1d1d1d;
+  }
+  
+  .Course-feature::before,
+  .Course-feature::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #55e6a5;
+  }
+  
+  .Course-feature::before {
+    left: 15px; /* Đặt giá trị left cho ::before */
+  }
+  
+  .Course-feature::after {
+    right: 15px; /* Đặt giá trị right cho ::after */
+  }

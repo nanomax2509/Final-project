@@ -1,4 +1,23 @@
 .btnSubmit{
     width: 8rem;
     margin-right: 3rem;
+    background-color: #1b1b1b;
+    color: #fff;
+    border: 1px solid white;
+    transition: .4s;
+    border-radius: 30px;
+    font-weight: 400;
+    &:hover{
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+    }
+}
+.inputSearch{
+    border: 1px solid #282828;
+    transition: .3s;
+    color: #282828;
+    &:hover{
+        border:1px solid #65bd7d;
+    }
 }

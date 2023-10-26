@@ -25,7 +25,7 @@ function Login() {
 	const [errorMessage, setErrorMessage] = useState('');
 	const formik = useFormik({
 		initialValues: {
-			taiKhoan: 'quocanh113',
+			taiKhoan: '123anh1',
 			matKhau: '123123',
 		},
 			
@@ -48,8 +48,9 @@ function Login() {
 					  }
 
 				);
-				console.log(resp.data.accessToken);
+				
 				saveLocalStorage('ACCESS_TOKEN', resp.data.accessToken);
+				saveLocalStorage('LOGIN_DATA',resp.data);
 				// lưu vào storage
 				navigate('/profile');
 				// public: ai cũng có thể gọi được hết.

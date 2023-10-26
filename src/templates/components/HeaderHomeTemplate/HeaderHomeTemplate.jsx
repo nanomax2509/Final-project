@@ -10,10 +10,9 @@ import { ACCESS_TOKEN } from '../../../constant';
 import { resetUserProfile } from '../../../redux/slices/User';
 export default function HeaderHomeTemplate() {
   const { userProfile } = useSelector((state) => state.UserReducer);
-  // console.log(userProfile,"header")
+  console.log(userProfile,"header")
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log(ACCESS_TOKEN, "token")
   const handleLogout = () => {
     deleteKey(ACCESS_TOKEN);
     // reset userLogin ở trên redux.
@@ -38,8 +37,8 @@ export default function HeaderHomeTemplate() {
             <Search />
           </div>
           {userProfile.email ? (
-            <div style={{ textAlign: 'center'}} className='d-flex'>
-              <p style={{ color: 'white' }}>{userProfile.email}</p>
+            <div style={{ textAlign: 'center'}} className='d-flex HeaderAccount'>
+              <NavLink to={'/profile'} className='mr-3 ' style={{ color: 'white' }}>{userProfile.email}</NavLink>
               <button onClick={handleLogout}>Logout</button>
             </div>
           ) : (

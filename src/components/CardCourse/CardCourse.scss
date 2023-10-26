@@ -4,6 +4,15 @@
 	border-radius: 4px;
 	padding: 10px;
 	margin-bottom: 20px;
+	transition: all .5s;
+
+	&:hover {
+		background-color: #F99417;
+		
+		.contentSub {
+			color: #363062;
+		}
+	}
 	
 	/* Thiết lập kích thước */
     max-width: 24%;
@@ -60,3 +69,7 @@
 	grid-template-columns: repeat(4, 1fr); /* Chia cột thành 4 phần bằng nhau */
 	grid-gap: 20px; /* Khoảng cách giữa các card */
   }
+  .card-course-btn {
+	background-color: #363062!important;
+	
+}

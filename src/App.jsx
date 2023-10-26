@@ -9,6 +9,7 @@ import CoursesByCategory from './pages/CoursesbyCategory/Cbc';
 import Detail from './pages/Detail/Detail';
 import ListSearch from './components/ListSearch/ListSearch';
 import Profile from './pages/Profile/Profile';
+import ProfileForm from './components/ProfileForm/ProfileForm';
 const Home = lazy(() => import('./pages/Home/Home'));
 
 
@@ -26,6 +27,7 @@ function App() {
 				<Route path='Detail/:id' element={<Detail/>}/>
 				<Route path='listSearch' element={<ListSearch/>}/>
 				<Route path='profile' element={<Profile/>}/>
+				<Route path='profileForm' element={<ProfileForm/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

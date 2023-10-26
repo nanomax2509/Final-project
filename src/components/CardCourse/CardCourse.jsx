@@ -11,14 +11,14 @@ function CardCourse(props) {
       </div>
       <div className="card-course-content">
         <p className="content-title">{course.tenKhoaHoc}</p>
-        <p className="content-sub">{course.luotXem}</p>
+        <p className="contentSub">Lượt xem: {course.luotXem}</p>
       </div>
       <div className="card-course-interact">
         <NavLink
           to={`/detail/${course.maKhoaHoc}`}
           className="card-course-btn buy-now"
         >
-          Đăng ký
+          Xem ngay
         </NavLink>
       </div>
     </div>

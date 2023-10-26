@@ -1,18 +1,21 @@
 // rxslice
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getCourseByIdApi } from '../../services/course.services';
+import { getLocalStorage } from '../../utils';
+
 import axios from 'axios';
 const initialState = {
 	listCourse: [],
 	courseDetail: {},
 	isLoading: true,
 };
+const tokenCyber = getLocalStorage('TOKENCYBER');
 export const getThank = createAsyncThunk('Course/getData', async () => {
 	const resp = await axios.get(
-		"https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP02",
+		"https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01",
 		{
 		  headers: {
-			TokenCybersoft: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1MDA4IiwiSGV0SGFuU3RyaW5nIjoiMjgvMDEvMjAyNCIsIkhldEhhblRpbWUiOiIxNzA2NDAwMDAwMDAwIiwibmJmIjoxNjc3NDMwODAwLCJleHAiOjE3MDY1NDc2MDB9.eo3y0MmcjE8Jl4fRzUJLBoZzylEeFDcUTfWXvtb1hdc',
+			TokenCybersoft: tokenCyber,
 		  },
 		}
 	  );
@@ -26,7 +29,7 @@ export const getCourseByIdThunk = createAsyncThunk(
 			"https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01",
 			{
 			  headers: {
-				TokenCybersoft: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1MDA4IiwiSGV0SGFuU3RyaW5nIjoiMjgvMDEvMjAyNCIsIkhldEhhblRpbWUiOiIxNzA2NDAwMDAwMDAwIiwibmJmIjoxNjc3NDMwODAwLCJleHAiOjE3MDY1NDc2MDB9.eo3y0MmcjE8Jl4fRzUJLBoZzylEeFDcUTfWXvtb1hdc',
+				TokenCybersoft: tokenCyber,
 			  },
 			}
 		  );

@@ -16,7 +16,7 @@ const schemaRegister = Yup.object({
   matKhau: Yup.string()
     .required('Mật khẩu là bắt buộc')
     .min(6, 'Phải có ít nhất 6 ký tự')
-    .max(10, 'Phải có tối đa 10 ký tự'),
+    .max(20, 'Chỉ có tối đa 20 ký tự'),
   soDT: Yup.string()
     .required('Số điện thoại là bắt buộc')
     .matches(phoneRegExp, 'Số điện thoại không hợp lệ'),
@@ -151,7 +151,7 @@ function RegisterFormik() {
         </div>
       </div>
             <div>
-            <button className="btn btn-primary mt-4 btn-submit d-block mx-auto" type="submit">
+            <button className="btn  mt-4 btn-submit d-block mx-auto" type="submit">
         Đăng ký
       </button>
       {errorMessage && <p className="text-danger mt-2 text-center">{errorMessage}</p>}

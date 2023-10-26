@@ -15,18 +15,23 @@
     margin-left: 4rem;
     padding-right: 3rem;
 }
-.btnDangKy{
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid white;
-    color: white;
-    transition: .5s;
-    margin-top: 1rem;
-    &:hover{
-        color: red;
-        border: red 1px solid;
-    }
-    margin-left: 5rem;
+.btnDangKy {
+  background-color: #362FD9;
+  border: 1px solid #EEEEEE;
+  color: #EEEEEE;
+  transition: .3s;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 
+  &:hover {
+      color: white;
+      border: #ff7a00 1px solid;
+      transform: translateX(15%);
+      background-color: #ff7a00;
+  }
 }
 .dataDetailLeft{
     width: 65%;
@@ -45,3 +50,58 @@
 .dataDetailBottom{
     padding-bottom:1rem;
 }
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius:20px;
+    width: 30%;
+  }
+  
+  .notification.success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #0c8;
+  }
+  
+  .notification.warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+  }
+  
+  .notification.error {
+    background-color: #8957ff;
+    border-color: #8957ff;
+    color: white;
+  }
+  
+  .notificationContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .closeButton {
+    margin-top: 1rem;
+    background-color: #0f172a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+    &:hover{
+        background-color: #3f4555;
+      }
+  }
+ 
+  
+  .notificationContent p {
+    margin: 0;
+  }

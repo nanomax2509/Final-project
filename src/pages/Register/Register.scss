@@ -19,4 +19,12 @@
     font-size: 20px;
     display: block;
     align-items: center;
+    color: #fff;
+    background-color: #282828;
+    transition: .3s;
+    &:hover{
+        color: white;
+        background-color: black;
+        border: 1px solid black;
+    }
 }

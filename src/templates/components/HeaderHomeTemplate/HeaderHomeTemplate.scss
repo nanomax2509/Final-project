@@ -1,10 +1,10 @@
 .HeaderHomeTemplate {
-  background-color: brown;
+  background-color: #1b1b1b;
   display: flex;
   justify-content: space-around;
   color: white;
   padding: .5rem;
-
+  font-weight: 700;
   .HeaderLeft {
     display: flex;
     position: relative;
@@ -66,32 +66,36 @@
     }
   }
 }
-
 .HeaderLink {
   margin-right: 10px;
   padding: 8px 16px;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 4px;
   color: white;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-
-  &:hover {
-    background-color: white;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  z-index: 1;
+  &:hover{
+    text-decoration: none;
     color: black;
-    text-decoration: none;
-  }
-
-  &:focus,
-  &:active {
-    outline: none;
-    text-decoration: none;
-  }
-
-  &:visited {
-    text-decoration: none;
   }
 }
-p{
-  margin-top: auto;
+
+.HeaderLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%; /* Thay đổi giá trị left thành 50% */
+  transform: translateX(-50%); /* Dùng translateX để căn chỉnh vị trí */
+  width: 0;
+  height: 100%;
+  background: #c9f31d;
+  transition: width 0.3s ease; /* Thay đổi thuộc tính transition thành width */
+  z-index: -1;
+}
+
+.HeaderLink:hover::before {
+  width: 100%; /* Thay đổi giá trị width thành 100% */
 }

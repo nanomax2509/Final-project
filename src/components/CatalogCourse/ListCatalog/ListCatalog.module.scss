@@ -1,5 +1,6 @@
 .listCatalog {
   position: relative;
+  transition: .5s;
 }
 
 .dropdownWrapper {
@@ -12,8 +13,9 @@
 }
 
 .dropdown {
+  border-radius: 5px;
   position: relative;
-  background-color: #fff;
+  background-color: #282828;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -23,13 +25,15 @@
 
 .dropdownTitle {
   display: flex;
+  border-radius: 5px;
   align-items: center;
   padding: 0;
   background: none;
   border: none;
-  color: #333;
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dropdownList {
@@ -51,4 +55,27 @@
 }
 .catalogLink {
   padding-bottom: 12px;
+}
+.fa {
+  transition: transform 0.3s;
+}
+
+.dropdownTitle:hover .fa-arrow-down,
+.dropdownTitle:not(:hover) .fa-arrow-up {
+  transform: rotate(180deg);
+}
+
+.rolling {
+  animation: fallingText 0.5s forwards;
+}
+
+@keyframes fallingText {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
