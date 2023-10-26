@@ -15,7 +15,7 @@ function ListCatalog(props) {
   const handleMouseLeave = () => {
     setIsDropdownOpen(false);
   };
-
+ 
   return (
     <div
       className={mergeClassName(css.listCatalog, className)}
@@ -38,7 +38,7 @@ function ListCatalog(props) {
               {Array.isArray(listCatalogCourse) &&
                 listCatalogCourse.map((catalog) => {
                   return (
-                    <NavLink to={`/CoursesByCategory/${catalog.maDanhMuc}`} className={mergeClassName('d-block text-white  mt-1 w-100', css.catalogLink)} key={catalog.maDanhMuc}>
+                    <NavLink  to={`/CoursesByCategory/${catalog.maDanhMuc}`} className={mergeClassName('d-block text-white  mt-1 w-100', css.catalogLink)} key={catalog.maDanhMuc}>
                       {catalog.tenDanhMuc}
                     </NavLink>
                   );

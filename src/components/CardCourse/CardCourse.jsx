@@ -4,6 +4,12 @@ import { NavLink } from "react-router-dom";
 
 function CardCourse(props) {
   const { course } = props;
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   return (
     <div className="card-course col-3">
       <div className="card-course-img">
@@ -14,7 +20,7 @@ function CardCourse(props) {
         <p className="contentSub">Lượt xem: {course.luotXem}</p>
       </div>
       <div className="card-course-interact">
-        <NavLink
+        <NavLink onClick={handleLinkClick}
           to={`/detail/${course.maKhoaHoc}`}
           className="card-course-btn buy-now"
         >

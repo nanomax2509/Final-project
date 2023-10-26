@@ -3,7 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 function CardCbC(props) {
   const { CbC } = props;
-
+  const handleLinkClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   return (
     <div className="col-md-3 mb-3">
       <div className="card card-CbC">
@@ -11,8 +16,8 @@ function CardCbC(props) {
         <div className="card-body">
           <h5 className="card-title">{CbC.tenKhoaHoc}</h5>
           <p className="card-text">{CbC.luotXem}</p>
-          <NavLink to={`/detail/${CbC.maKhoaHoc}`} className="btn btn-primary">
-            Đăng ký
+          <NavLink onClick={handleLinkClick} to={`/detail/${CbC.maKhoaHoc}`} className="btn btn-primary">
+            Xem ngay
           </NavLink>
         </div>
       </div>

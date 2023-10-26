@@ -153,30 +153,34 @@ function Profile() {
 			</div>
 			<div className="main-content">
 				{activeTab === 'personal' && (
-					<div className="personal-info">
-						<h1>Thông tin cá nhân</h1>
-						<div>
-							<h3>Tài khoản: {userProfile.taiKhoan}</h3>
+					
+					<div className="personal-info ">
+						<h2 className='p-3'>Thông tin cá nhân</h2>
+						<div className='row'>
+						<div className='profileInfo col-6 '>
+						<label>Tài Khoản:</label>
+							<span>{userProfile.taiKhoan}</span>
 						</div>
-						<div>
-							<label>Họ tên:</label>
+						<div className='profileInfo col-6'>
+							<label>Họ Tên:</label>
 							<span>{userProfile.hoTen}</span>
 						</div>
-						<div>
+						<div className='profileInfo col-6'>
 							<label>Email:</label>
 							<span>{userProfile.email}</span>
 						</div>
-						<div>
+						<div className='profileInfo col-6'>
 							<label>SĐT:</label>
 							<span>{userProfile.soDT}</span>
 						</div>
-						<div>
+						<div className='profileInfo col-6'>
 							<label>Mã Nhóm:</label>
 							<span>{userProfile.maNhom}</span>
 						</div>
-						<div>
+						<div className='profileInfo col-6'>
 							<label>Mã loại người dùng:</label>
 							<span>{userProfile.maLoaiNguoiDung}</span>
+						</div>
 						</div>
 						<NavLink to={'/profileForm'}>Thay đổi thông tin</NavLink>
 					</div>
