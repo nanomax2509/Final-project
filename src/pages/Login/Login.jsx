@@ -75,14 +75,14 @@ function Login() {
 			<hr className='m-5'/>
 			<div className='login-input'>
 				<label className='d-block'>Tài khoản</label>
-				<input className='w-25 p-2' type='text' name='taiKhoan' {...formik.getFieldProps('taiKhoan')} />
+				<input className='w-100 p-2' type='text' name='taiKhoan' {...formik.getFieldProps('taiKhoan')} />
 				{formik.errors.taiKhoan && formik.touched.taiKhoan && (
 					<p className='text-danger'>{formik.errors.taiKhoan}</p>
 				)}
 			</div>
 			<div>
 				<label className='d-block mt-3'>Mật khẩu</label>
-				<input className='w-25 p-2'
+				<input className='w-100 p-2'
 					type='password'
 					name='matKhau'
 					{...formik.getFieldProps('matKhau')}
@@ -93,10 +93,10 @@ function Login() {
 			</div>
 			<div className='d-flex login-btn-form '>
 			<NavLink className={"login-navlink"} to='/register'>Register now ?</NavLink>
-			<button className='btn btn-success btn-login' type='submit'>Login</button>
+			<button className='btn btn-login' type='submit'>Login</button>
 			</div>
 			{/* <FacebookLogin/>		 */}
-			{errorMessage && <p className="text-danger login-error d-block">{errorMessage}</p>}
+			{errorMessage && <p className="text-danger login-error d-block mt-3">{errorMessage}</p>}
 					
 		</form>
 	);

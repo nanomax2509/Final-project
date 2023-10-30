@@ -1,30 +1,51 @@
-.register-title{
+.register-title {
     text-align: center;
-    font-size: 40px;
-    font-weight: 700;
-}
-.register-col{
-    padding: 0 5rem;
-    .register-input{
-        background-color:  #21212114;
-        color: black;
-        height: 3rem;
-        font-size: 16px;
-    }
-}
-.btn-submit{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem 3rem;
-    font-size: 20px;
-    display: block;
-    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+  }
+  .register-row{
+    margin-left: 6rem;
+  }
+  .register-left{
+    padding-left: 12em;
+  }
+  .register-right{
+    padding-right: 12em;
+  }
+  .register-input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .register-input:focus {
+    outline: none;
+    border-color: #000;
+  }
+  
+  .text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .btn-submit {
+    background-color: #000;
     color: #fff;
-    background-color: #282828;
-    transition: .3s;
-    &:hover{
-        color: white;
-        background-color: black;
-        border: 1px solid black;
-    }
-}
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-submit:hover {
+    background-color: #434343;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .register-error {
+    margin-top: 20px;
+  }
+  

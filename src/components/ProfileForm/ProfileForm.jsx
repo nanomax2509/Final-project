@@ -4,6 +4,7 @@ import axios from 'axios';
 import { getProfileThunk } from '../../redux/slices/User';
 import { getLocalStorage } from '../../utils';
 import { NavLink } from 'react-router-dom';
+import './ProfileForm.scss'
 
 function ProfileForm() {
   const { userProfile } = useSelector((state) => state.UserReducer);
@@ -67,10 +68,16 @@ function ProfileForm() {
     <div className="profile-Form">
       <h2>Thay đổi thông tin</h2>
       {isSuccess ? (
-        <div>
-          <p>Thay đổi thông tin thành công!</p>
-          <NavLink to={'/profile'} onClick={() => setIsSuccess(false)}>OK</NavLink>
-        </div>
+       <div className='profileFormPopup'>
+       <div className='profileFormPopup-content'>
+         <p>Thay đổi thông tin thành công!</p>
+         <div>
+         <NavLink className='btnOK' to={'/profile'} onClick={() => setIsSuccess(false)}>OK</NavLink>
+         </div>
+       </div>
+     </div>
+     
+      
       ) : (
         <div>
           <div>
@@ -129,7 +136,7 @@ function ProfileForm() {
               disabled
             />
           </div>
-          <button onClick={saveChanges}>Lưu thay đổi</button>
+          <button className='btnCapNhat' onClick={saveChanges}>Lưu thay đổi</button>
         </div>
       )}
     </div>

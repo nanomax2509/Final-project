@@ -145,3 +145,25 @@
     padding: 20px;
     text-align: center;
   }
+  .profileInfo{
+    padding: 1rem;
+    span{
+      margin-left: 5px;
+      font-weight: bold;
+    }
+  }
+  .btnThaydoi {
+    background: linear-gradient(to right, #000000, #434343);
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
+  }
+  
+  .btnThaydoi:hover {
+    background: linear-gradient(to right, #434343, #000000);
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }

@@ -1,5 +1,5 @@
-.card-search{
-    border: 2px solid chocolate;
+.card-search {
+    border: 2px solid #000;
     margin-right: 10px; /* Tạo khoảng cách bên phải giữa các card */
     margin-bottom: 10px; 
     padding: 1rem;
@@ -8,13 +8,19 @@
     width: 300px; // Định rõ chiều rộng của card
     height: 400px;
     overflow: hidden;
-}
-.card-search-img{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-search-img {
     display: flex;
     justify-content: center;
     height: 40%;
-}
-.card-search-content {
+    object-fit: cover;
+  }
+  
+  .card-search-content {
     width: 100%; // Đảm bảo chiều rộng của thành phần con không vượt quá card
     height: 50%; // Định rõ chiều cao của thành phần con
     padding: 0.5rem; // Tạo khoảng cách giữa nội dung và viền của thành phần con
@@ -22,4 +28,19 @@
     text-overflow: ellipsis;
     overflow: hidden;
     
+    .content-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+    
+    .content-title.text-muted {
+      color: #999;
+    }
+    
+    .content-sub {
+      font-size: 14px;
+      color: #666;
+    }
   }
+  

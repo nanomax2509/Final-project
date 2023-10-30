@@ -8,7 +8,17 @@ import { NavLink } from 'react-router-dom';
 function Profile() {
 	const { userProfile } = useSelector((state) => state.UserReducer);
 	console.log(userProfile, "edit")
-
+	const [searchResults, setSearchResults] = useState([]);
+	const handleSearchCourse = (e) => {
+		const searchText = e.target.value;
+	  
+		const filteredCourses = userProfile.chiTietKhoaHocGhiDanh.filter((course) => {
+		  return course.tenKhoaHoc.toLowerCase().includes(searchText.toLowerCase());
+		});
+	  
+		setSearchResults(filteredCourses);
+	  };
+	  
 	const [userProfile1, setUserProfile] = useState(null);
 	const updateUserProfile = (newProfileData) => {
 		setUserProfile(newProfileData);
@@ -153,50 +163,46 @@ function Profile() {
 			</div>
 			<div className="main-content">
 				{activeTab === 'personal' && (
-					
+
 					<div className="personal-info ">
 						<h2 className='p-3'>Thông tin cá nhân</h2>
 						<div className='row'>
-						<div className='profileInfo col-6 '>
-						<label>Tài Khoản:</label>
-							<span>{userProfile.taiKhoan}</span>
+							<div className='profileInfo col-6 '>
+								<label>Tài Khoản:</label>
+								<span>{userProfile.taiKhoan}</span>
+							</div>
+							<div className='profileInfo col-6'>
+								<label>Họ Tên:</label>
+								<span>{userProfile.hoTen}</span>
+							</div>
+							<div className='profileInfo col-6'>
+								<label>Email:</label>
+								<span>{userProfile.email}</span>
+							</div>
+							<div className='profileInfo col-6'>
+								<label>SĐT:</label>
+								<span>{userProfile.soDT}</span>
+							</div>
+							<div className='profileInfo col-6'>
+								<label>Mã Nhóm:</label>
+								<span>{userProfile.maNhom}</span>
+							</div>
+							<div className='profileInfo col-6'>
+								<label>Mã loại người dùng:</label>
+								<span>{userProfile.maLoaiNguoiDung}</span>
+							</div>
 						</div>
-						<div className='profileInfo col-6'>
-							<label>Họ Tên:</label>
-							<span>{userProfile.hoTen}</span>
-						</div>
-						<div className='profileInfo col-6'>
-							<label>Email:</label>
-							<span>{userProfile.email}</span>
-						</div>
-						<div className='profileInfo col-6'>
-							<label>SĐT:</label>
-							<span>{userProfile.soDT}</span>
-						</div>
-						<div className='profileInfo col-6'>
-							<label>Mã Nhóm:</label>
-							<span>{userProfile.maNhom}</span>
-						</div>
-						<div className='profileInfo col-6'>
-							<label>Mã loại người dùng:</label>
-							<span>{userProfile.maLoaiNguoiDung}</span>
-						</div>
-						</div>
-						<NavLink to={'/profileForm'}>Thay đổi thông tin</NavLink>
+						<NavLink className='btnThaydoi' to={'/profileForm'}>Thay đổi thông tin</NavLink>
 					</div>
 				)}
 				{activeTab === 'course' && (
 					<div className="course-info">
 						<div className="courseTitle d-flex">
 							<h3>Các khoá học đã tham gia</h3>
-							<div className="courseSearch">
-								<input
-									type="text"
-									className="form-control"
-									placeholder="Nhập để tìm kiếm khoá học"
-									id="searchCourse"
-								/>
-							</div>
+							
+						</div>
+						<div className="myCourse">
+							<div id="searchResults"></div>
 						</div>
 						<div className="myCourse">
 							{userProfile?.chiTietKhoaHocGhiDanh?.map((user) => (

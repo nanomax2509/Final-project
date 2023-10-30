@@ -1,26 +1,66 @@
-.login-title{
+.login-input {
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  .login-title {
+    text-align: center;
     font-size: 3rem;
-    margin: 1rem 3rem;
-    text-align: center;
-    font-weight: 700;
-}
-.login-input{
-    text-align: center;
-        color: black;
-        font-size: 16px;
-}
-.login-btn-form{
-    align-items: baseline;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-.btn-login{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: .5rem 2rem;
-    margin-left: 1rem;
-    font-size: 20px;
-    }
-    .login-navlink{
-        align-items: center;
-    }
+    margin-top: 3rem;
+    font-weight: bold;
+  }
+  
+  .hr {
+    border-top: 1px solid #ccc;
+  }
+  
+  .login-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-input input:focus {
+    outline: none;
+    border-color: #000;
+  }
+  
+  .login-input .text-danger {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .login-btn-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .login-navlink {
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+  }
+  
+  .btn-login {
+    background: linear-gradient(to right, #000000, #434343);
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-login:hover {
+    background: linear-gradient(to right, #434343, #000000);
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .login-error {
+    margin-top: 20px;
+    font-size: 2rem;
+  }
+  
